@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24112" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24118.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Viz-lF-TG2">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24057"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24059"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,42 +15,56 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zrm-ff-iT1">
-                                <rect key="frame" x="135" y="273" width="123" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" title="Launch Swift"/>
-                                <connections>
-                                    <segue destination="Wpt-6S-KiO" kind="show" id="1dx-Bn-ydi"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="Background"/>
-                        <constraints>
-                            <constraint firstItem="Zrm-ff-iT1" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Ifg-mN-Aad"/>
-                            <constraint firstItem="Zrm-ff-iT1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="155" id="Ree-mk-p4b"/>
-                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="BQ5-1W-Osg">
+                        <barButtonItem key="rightBarButtonItem" title="Launch Swift" id="VYg-8v-oIR">
+                            <connections>
+                                <segue destination="Wpt-6S-KiO" kind="popoverPresentation" popoverAnchorBarButtonItem="VYg-8v-oIR" id="TOa-4m-nGR">
+                                    <popoverArrowDirection key="popoverArrowDirection" down="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-515" y="130"/>
+            <point key="canvasLocation" x="411.4503816793893" y="129.57746478873241"/>
         </scene>
         <!--Swift Hosting View Controller-->
         <scene sceneID="7Gw-R3-aGY">
             <objects>
                 <hostingController id="Wpt-6S-KiO" customClass="SwiftHostingViewController" customModule="testHost" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="CnE-fB-SPZ"/>
+                    <value key="contentSizeForViewInPopover" type="size" width="200" height="200"/>
                 </hostingController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5YC-tQ-V12" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="289" y="130"/>
+            <point key="canvasLocation" x="1214.5038167938931" y="129.57746478873241"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wmb-b8-k3W">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Viz-lF-TG2" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4xK-z0-z1p">
+                        <rect key="frame" x="0.0" y="118" width="393" height="54"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="sA6-G6-5ax"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gSu-Q7-3rV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-515.26717557251902" y="129.57746478873241"/>
         </scene>
     </scenes>
     <resources>
         <namedColor name="Background">
-            <color red="0.99999994039535522" green="0.14272427721088435" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.14300000667572021" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

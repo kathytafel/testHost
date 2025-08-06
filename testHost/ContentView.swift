@@ -25,7 +25,7 @@ struct ContentView: View {
                 .toolbar {
                     menuButton
                 }
-                .background(backgroundGradient)
+                .background(.clear)
         }
         .sheet(isPresented: $showAddSheet) {
             AlarmAddView()
