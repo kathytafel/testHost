@@ -13,10 +13,6 @@ struct ContentView: View {
     @State private var viewModel = ViewModel()
     @State private var showAddSheet = false
     
-    let backgroundGradient = LinearGradient(
-        colors: [Color.red, Color.blue],
-        startPoint: .top, endPoint: .bottom)
-    
     var body: some View {
         NavigationStack {
             content
@@ -26,6 +22,8 @@ struct ContentView: View {
                     menuButton
                 }
                 .background(.clear)
+                .presentationBackground(.clear)
+
         }
         .sheet(isPresented: $showAddSheet) {
             AlarmAddView()
@@ -34,6 +32,7 @@ struct ContentView: View {
         .onAppear {
             viewModel.fetchAlarms()
         }
+        .presentationBackground(.clear)
         .tint(.accentColor)
     }
     var menuButton: some View {
@@ -303,8 +302,15 @@ struct TimePickerView: View {
     ContentView()
 }
 @available(iOS 26.0, *)
-class SwiftHostingViewController: UIHostingController<ContentView> {
+class SwiftHostingViewController: UIHostingController<AnyView> {
+    
+    //.presentationBackground(.clear)
+
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder, rootView: ContentView())
+        let root = AnyView(
+            ContentView()
+                .presentationBackground(.clear)
+        )
+        super.init(coder: aDecoder, rootView:root)
     }
 }

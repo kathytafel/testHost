@@ -20,14 +20,12 @@
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    UIZoomTransitionOptions *options = [UIZoomTransitionOptions new];
-    UIViewControllerTransition *zoom = nil;
-    if (@available(iOS 26, *)) {
-        zoom = [UIViewControllerTransition zoomWithOptions:options
-                                             sourceBarButtonItemProvider:^UIBarButtonItem * _Nonnull(UIZoomTransitionSourceViewProviderContext * _Nonnull context) {
-            return self.launchSwiftItem;
-        }];
-    }
-    [segue.destinationViewController setPreferredTransition:zoom];
+    UISheetPresentationController *sheetPresenter = segue.destinationViewController.sheetPresentationController;
+    sheetPresenter.detents = @[[UISheetPresentationControllerDetent mediumDetent]
+                              ,[UISheetPresentationControllerDetent largeDetent]];;
+    sheetPresenter.prefersScrollingExpandsWhenScrolledToEdge = NO;
+    sheetPresenter.largestUndimmedDetentIdentifier =UISheetPresentationControllerDetentIdentifierMedium;
+    sheetPresenter.prefersGrabberVisible = YES;
+    sheetPresenter.prefersEdgeAttachedInCompactHeight = YES;
 }
 @end

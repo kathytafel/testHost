@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24118.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Viz-lF-TG2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24123.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Viz-lF-TG2">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24059"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24062"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,9 +21,7 @@
                     <navigationItem key="navigationItem" id="BQ5-1W-Osg">
                         <barButtonItem key="rightBarButtonItem" title="Launch Swift" id="VYg-8v-oIR">
                             <connections>
-                                <segue destination="Wpt-6S-KiO" kind="popoverPresentation" popoverAnchorBarButtonItem="VYg-8v-oIR" id="TOa-4m-nGR">
-                                    <popoverArrowDirection key="popoverArrowDirection" down="YES"/>
-                                </segue>
+                                <segue destination="Wpt-6S-KiO" kind="presentation" modalPresentationStyle="pageSheet" id="TOa-4m-nGR"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
